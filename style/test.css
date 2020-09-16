@@ -1,0 +1,19 @@
+h1 {
+    height: 10px;
+}
+
+h2 {
+    height: 5px;
+    color: darkgoldenrod;
+}
+
+
+p {
+    margin-left: 30px;
+    font-size: 20px;
+    color: forestgreen;
+}
+
+body {
+    background-color: antiquewhite;
+}
