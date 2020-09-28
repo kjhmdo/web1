@@ -4,17 +4,24 @@
 <body>
 
     <h2>JavaScript Arrays</h2>
+    <ol>
+        <li><a href="#forLoop" onclick="viewFruits()">JavaScript array elements are accessed using <u>for</u> loop.</a></li><br>
+        <li><a href="#forEachLoop" onclick="viewFruits2()">JavaScript array elements are accessed using <u>forEach</u> loop.</a></li><br>
 
-    <p>JavaScript array elements are accessed using <u>for</u> loop.</p>
-
-    <p id="demo"></p>
+    </ol>
+    <p id="forLoop"> </p><br><br>
+    <p id="forEachLoop"> </p>
 
     <script>
-        viewFruits();
+        //    viewFruits();
+        //    viewFruits2();
+        var fruits, text;
+        fruits = ["Banana", "Orange", "Apple", "Mango"];
 
         function viewFruits() {
-            var fruits, text, fLen, i;
-            fruits = ["Banana", "Orange", "Apple", "Mango"];
+            text = "";
+            var fLen, i;
+
             fLen = fruits.length;
 
             text = "<ul>";
@@ -22,8 +29,26 @@
                 text += "<li>" + fruits[i] + "</li>";
             }
             text += "</ul>";
+            text += "<br><br>";
+            //            console.log(text);
+            document.getElementById("forLoop").innerHTML = text;
+        }
+
+        function viewFruits2() {
+            text = "";
+            var fLen, i;
+            fLen = fruits.length;
+
+            text = "<ul>";
+            fruits.forEach(myFunction);
+            text += "</ul>";
+
             console.log(text);
-            document.getElementById("demo").innerHTML = text;
+            document.getElementById("forEachLoop").innerHTML = text;
+        }
+
+        function myFunction(value) {
+            text += "<li>" + value + "</li>";
         }
 
     </script>
