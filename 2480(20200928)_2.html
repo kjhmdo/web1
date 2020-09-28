@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h2>JavaScript Arrays</h2>
+
+    <p>JavaScript array elements are accessed using <u>for</u> loop.</p>
+
+    <p id="demo"></p>
+
+    <script>
+        viewFruits();
+
+        function viewFruits() {
+            var fruits, text, fLen, i;
+            fruits = ["Banana", "Orange", "Apple", "Mango"];
+            fLen = fruits.length;
+
+            text = "<ul>";
+            for (i = 0; i < fLen; i++) {
+                text += "<li>" + fruits[i] + "</li>";
+            }
+            text += "</ul>";
+            console.log(text);
+            document.getElementById("demo").innerHTML = text;
+        }
+
+    </script>
+
+</body>
+
+</html>
