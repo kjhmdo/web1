@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<!--학번(yyyymmdd)_4.html -->
+
+<head>
+    <title> 5초후, 10초후에 새로운 윈도우 띄우기 연습과제</title>
+    <meta charset="utf-8">
+    <script>
+        var startTime, timer;
+
+        function start() {
+            startTime = new Date();
+            //1sec, 1000ms마다 시간과 경과한 시간 표시
+            timer = setInterval(displayTime, 1000);
+            setTimeout(winOpen1, 5000);
+            setTimeout(winOpen2, 10000);
+            setTimeout(stop, 10000);
+        }
+
+        function displayTime() {
+            var now = new Date();
+            var elapse = ((now - startTime) / 1000).toFixed(0);
+            document.getElementById("elapseTime").innerHTML = "경과시간: " + elapse;
+        }
+
+        function stop() {
+            clearInterval(timer);
+            document.getElementById("elapseTime").innerHTML = "경과시간 : 0";
+        }
+
+        function winOpen1() {
+            win1 = window.open("https://google.com", "", "_blank"); // 새창에서 열림
+        }
+
+        function winOpen2() {
+            win2 = window.open("https://google.com", "", "_blank"); // 새창에서 열림
+        }
+
+    </script>
+</head>
+
+<body>
+    <p id="elapseTime">경과시간: 0</p>
+    <input type="button" value="시작하기" onclick="start()">
+
+</body>
+
+</html>
