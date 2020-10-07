@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<!--학번(yyyymmdd)_1.html -->
+
+<head>
+    <title> 제어문 연습</title>
+    <meta charset="utf-8">
+    <script>
+        function calculate() {
+            var height = parseFloat(document.getElementById("height").value);
+            var weight = parseFloat(document.getElementById("weight").value);
+            var bmi = (weight / height / height).toFixed(1);
+            document.getElementById("bmi").innerHTML = bmi;
+
+        }
+
+        function check() {
+            var value = parseInt(document.getElementById("num").value);
+            if (value % 2 == 0)
+                document.getElementById("result").innerHTML = value + "는 짝수입니다.";
+            else
+                document.getElementById("result").innerHTML = value + "는 홀수입니다.";
+        }
+
+    </script>
+</head>
+
+<body>
+    <!--p> 키: <input type="text" value="" id="height" size=10>m</p>
+    <p> 몸무게: <input type="text" value="" id="weight" size=10>kg</p>
+    <p> 체질량 지수: <output id="bmi"></output></p>
+    <input type="button" id="button" value="계산" onclick="calculate()"-->
+    <p> 수를 입력해주세요. <input type="text" size=5 id="num"> </p>
+    <p id="result"></p>
+    <p><input type="button" value="확인" onclick="check()"></p>
+
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<!--학번(yyyymmdd)_3.html -->
+
+<head>
+    <title> 반복문연습 (에라토스테네스의 체를 이용한 소수구하기)</title>
+    <script>
+        var n = 100;
+        //배열을 선언
+        var arr = [];
+        for (var i = 2; i <= n; i++) {
+            arr[i] = true; //일단 모든 수를 소수라고 함. true면 소수, false이면 합성수
+        }
+        var bound = Math.floor(Math.sqrt(n)); //소수는 루트n만큼만 돌리면 충분하다.
+        var x = 2; //초기 소수값
+        while (x <= bound) {
+            for (var i = 2 * x; i <= n; i += x)
+                arr[i] = false; //x의 배수는 합성수임.
+            while (!arr[++x]);
+        }
+
+        document.write("<p> 에라토스테네스의 체를 이용한 소수 </p>");
+        for (var i = 2; i <= n; i++) {
+            if (arr[i]) {
+                document.write(i + "&nbsp;&nbsp;");
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

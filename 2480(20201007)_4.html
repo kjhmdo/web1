@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<!--학번(yyyymmdd)_4.html -->
+
+<head>
+    <title> 중첩 반복문연습 (피타고라스 수 찾기)</title>
+    <script>
+        document.write("<p> 1~20사이의 피타고라스의 수쌍 </p>");
+        var n = 20;
+        for (var a = 1; a <= n; a++) {
+            for (var b = 1; b <= n; b++) {
+                for (var c = 1; c <= n; c++) {
+                    if (a * a + b * b == c * c) {
+                        //console.log(a + ", " + b + ", " + c);
+                        document.write("(" + a + ", " + b + ", " + c + ")<br>");
+                    }
+                }
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

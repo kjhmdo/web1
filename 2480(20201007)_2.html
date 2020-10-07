@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<!--학번(yyyymmdd)_2.html -->
+
+<head>
+    <title> 제어문 연습</title>
+    <meta charset="utf-8">
+    <script>
+        function doRecFact() {
+            var result = 1;
+            //널 체크
+            if (document.getElementById("num").value.length == 0) {
+                alert("정수를 입력해주세요");
+                return;
+            }
+            var n = parseInt(document.getElementById("num").value);
+            result = rec_fact(n);
+            document.getElementById("result").innerHTML = "recursive 결과 = " + result;
+        }
+
+        function doWhileFact() {
+            var result = 1;
+            var n = parseInt(document.getElementById("num").value);
+            result = while_fact(n);
+            document.getElementById("result").innerHTML = "while 결과 = " + result;
+        }
+
+        function rec_fact(n) {
+            if (n <= 1)
+                return 1;
+            else
+                return n * rec_fact(n - 1);
+        }
+
+        function while_fact(n) {
+            var result = 1;
+            while (n > 1) {
+                result *= n--;
+                //   n -= 1;
+
+            }
+            return result;
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <p> 수를 입력해주세요. <input type="text" size=10 id="num" autofocus> </p>
+    <p id="result">여기에 결과 표시</p>
+    <p>
+        <input type="button" value="팩토리얼구하기(재귀)" onclick="doRecFact();">
+        <input type="button" value="팩토리얼구하기(while)" onclick="doWhileFact()">
+    </p>
+
+</body>
+
+</html>
