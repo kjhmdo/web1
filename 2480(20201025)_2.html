@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<!--학번(yyyymmdd)_1.html -->
+
+<head>
+    <title> Canvas 2D API</title>
+    <meta charset="utf-8">
+    <script>
+        function drawCircle() {
+            var canvas = document.getElementById("canvas");
+            var context = canvas.getContext("2d");
+
+            for (var i = 0; i < 4; i++) {
+                for (var j = 0; j < 3; j++) {
+                    context.beginPath();
+                    var x = 50 + j * 50;
+                    var y = 50 + i * 50;
+                    var radius = 20;
+                    context.fillStyle = "#0095DD";
+                    var startAngle = 0;
+                    var endAngle = Math.PI + (Math.PI * j) / 2;
+                    var antiClockWise = i % 2 == 0 ? false : true;
+
+                    context.arc(x, y, radius, startAngle, endAngle, antiClockWise);
+
+                    if (i % 2 == 0) {
+                        context.closePath();
+                    }
+
+                    if (i > 1)
+                        context.fill();
+                    else
+                        context.stroke();
+
+                }
+            }
+        }
+
+    </script>
+</head>
+
+<body onload="drawCircle();">
+    <canvas id="canvas" height="400" width="400">This browser doesn't support canvas</canvas>
+
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<!--학번(yyyymmdd)_1.html -->
+
+<head>
+    <title> Canvas 2D API-1</title>
+    <script>
+        function drawCircle() {
+
+            var canvas = document.getElementById("canvas");
+            var context = canvas.getContext("2d");
+            strokeRoundedRect(context, 10, 10, 100, 80, 10);
+            strokeRoundedRect(context, 150, 10, 100, 80, 30);
+
+        }
+
+        function strokeRoundedRect(ctx, x, y, width, height, radius) {
+            ctx.beginPath();
+            ctx.moveTo(x + radius, y);
+            ctx.arcTo(x + width, y, x + width, y + height, radius);
+            ctx.arcTo(x + width, y + height, x, y + height, radius);
+            ctx.arcTo(x, y + height, x, y, radius);
+            ctx.arcTo(x, y, x + width, y, radius);
+            ctx.stroke();
+        }
+
+    </script>
+</head>
+
+<body onload="drawCircle();">
+    <div>
+        <canvas id="canvas" width="400" height="400"></canvas>
+    </div>
+</body>
+
+</html>
