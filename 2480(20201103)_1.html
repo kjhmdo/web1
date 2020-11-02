@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<!--학번(yyyymmdd)_1.html -->
+
+<head>
+    <title> Canvas 2D API</title>
+    <meta charset="utf-8">
+    <script>
+        function drawText() {
+            hideElem();
+
+            var canvas = document.getElementById("canvas");
+            var context = canvas.getContext("2d");
+            context.font = "30px Comic Sans MS";
+            context.fillStyle = "red";
+            context.textAlign = "center";
+            //    context.fillText("Hello World", 10, 50);
+            context.fillText("hello world", canvas.width / 2, canvas.height / 2);
+            changeBtnText();
+        }
+
+        function viewImage() {
+            var canvas = document.getElementById("canvas");
+            var context = canvas.getContext("2d");
+            showElem();
+            var img = document.getElementById("scream");
+            context.drawImage(img, 10, 10);
+            changeBtnImageText();
+
+        }
+
+        function hideElem() {
+            // document.getElementById("test").style.visibility = "hidden";
+            //    document.getElementById("scream").style.visibility = "hidden";
+            //  document.getElementById("canvas").style.display = "none";
+            document.getElementById("test").style.display = "none";
+            document.getElementById("scream").style.display = "none";
+        }
+
+        function showElem() {
+            document.getElementById("test").style.display = "block";
+            document.getElementById("scream").style.display = "block";
+            //    document.getElementById("test").style.visibility = "visible     ";
+            //    document.getElementById("scream").style.visibility = "visible";
+        }
+
+        function changeBtnText() {
+            //    console.log("changeBtnText");
+            var text1 = document.getElementById("btnText").innerHTML;
+            //    console.log(text1);
+
+            if (text1 === "Text 예제 보이기") {
+                document.getElementById("btnText").innerHTML = "Text 예제 숨기기";
+            } else {
+                document.getElementById("btnText").innerHTML = "Text 예제 보이기";
+            }
+        }
+
+        function changeBtnImageText() {
+            //   console.log("changeBtnImageText");
+            var text1 = document.getElementById("btnImage").innerHTML;
+            //    console.log(text1);
+
+            if (text1 === "Image 예제 보이기") {
+                document.getElementById("btnImage").innerHTML = "Image 예제 숨기기";
+            } else {
+                document.getElementById("btnImage").innerHTML = "Image 예제 보이기";
+            }
+        }
+
+    </script>
+</head>
+
+<body onload="hideElem();">
+    <button id="btnText" type=" button" onclick="drawText()">Text 예제 보이기</button>
+    <button id="btnImage" type="button" onclick="viewImage()">Image 예제 보이기</button>
+    <p id="test">
+        <image id="scream" width="220" height="277" src="./images/pic_the_scream.jpg" alt="The Scream"></image>
+    </p>
+
+    <div>
+        <canvas id="canvas" width="240" height="297" style="border:1px solid #d3d3d3;"></canvas>
+    </div>
+</body>
+
+</html>
